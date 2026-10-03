@@ -1,0 +1,26 @@
+{
+  "vision": {
+    "v2t_graph_path": "../v2t-graph",
+    "detector_weights": "yolov8s-worldv2.pt",
+    "device": "cuda",
+    "conf_threshold": 0.2
+  },
+  "audio": { "language": "en", "tts_backend": "auto", "translate_queries": true },
+  "asr": { "backend": "keyboard", "whisper_model": "small", "whisper_device": "cuda" },
+  "ocr": { "gpu": true },
+  "transport": { "gtfs_dir": "data/delhi_gtfs" },
+  "sos": {
+    "confirm_window_s": 10,
+    "user_name": "Your Name",
+    "backends": ["console", "telegram"],
+    "telegram_bot_token": "",
+    "telegram_chat_id": ""
+  },
+  "link": {
+    "cane": "sim",
+    "ble_name": "SmartSight-Cane",
+    "serial_port": "COM5",
+    "camera": "0",
+    "location": "fixed"
+  }
+}
