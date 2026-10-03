@@ -1,0 +1,38 @@
+# --- core (always) ---
+numpy>=1.26
+opencv-python>=4.9          # full build (not headless) so the webcam/ESP32-CAM stream opens on Windows
+pillow>=10.0                # v2t-graph detect_depth.py
+langcodes[data]>=3.4        # resolves any language code (hi, sw, zh-Hant, ...)
+
+# --- VisionSense: install v2t-graph's own requirements.txt too ---
+#   pip install -r ../v2t-graph/requirements.txt      (brings torch + transformers)
+
+# --- cane link ---
+bleak>=0.22                 # BLE (field use)
+pyserial>=3.5               # USB serial (bench) + NMEA GPS
+
+# --- languages: translation (locale generation + understanding any-language queries) ---
+transformers>=4.40
+sentencepiece>=0.2          # NLLB-200 tokenizer
+IndicTransToolkit>=1.0      # IndicTrans2 pre/post-processing (Indian languages)
+huggingface_hub>=0.23
+
+# --- speech in ---
+sounddevice>=0.4.6
+faster-whisper>=1.0         # ~99 languages
+vosk>=0.3.45                # optional small models (en, hi)
+# IndicConformer and MMS-ASR load through transformers (no extra package)
+
+# --- speech out ---
+pyttsx3>=2.90               # OS voices
+parler-tts @ git+https://github.com/huggingface/parler-tts.git   # Indic Parler-TTS
+uroman>=1.3                 # romanizer some MMS-TTS voices need
+gTTS>=2.5                   # online fallback
+pygame>=2.5                 # plays gTTS audio
+
+# --- OCR ---
+easyocr>=1.7                # ~80 languages
+pytesseract>=0.3.10         # + install Tesseract itself and the traineddata you need
+
+# --- optional ---
+# pynmea2>=1.19             # serial GPS receiver
