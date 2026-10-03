@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+venv/
+models/
+data/delhi_gtfs/
+*.pt
+config.json
+.pytest_cache/
+cache/
+*.npy
+firmware_build/
