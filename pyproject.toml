@@ -1,0 +1,11 @@
+[project]
+name = "smartsight"
+version = "0.1.0"
+description = "SmartSight companion app: VisionSense (v2t-graph), voice, OCR, bus ID, SOS"
+requires-python = ">=3.10"
+
+[project.scripts]
+smartsight = "smartsight.__main__:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
